@@ -206,12 +206,12 @@ class core_master:
         print("Compare_Data Comparsion--> FINAL_DATA {0}".format(final_data))
         assert self.tx_data == final_data,"Data sent from Master is not matching the Data received by Slave" 
 
-        while True:
+        # while True:
              
-             await RisingEdge(self.CLK)
-             data_out = self.data_out.value
-             if data_out[-9] == 0:#### Wait for GOBUSY
-                    break
+        #      await RisingEdge(self.CLK)
+        #      data_out = self.data_out.value
+        #      if data_out[-9] == 0:#### Wait for GOBUSY
+        #             break
         
     async def read_reg_config(self):
         
