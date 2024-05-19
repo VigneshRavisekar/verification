@@ -27,7 +27,7 @@ def set_slave_select_register(SS):
 
 def set_register_add(addr):
       
-     register_map =  {"RX0":0x00,"RX1":0x04,"RX2":0x08,"RX3":0x0c,"TX0":0x00,"TX1":0x04,"TX3":0x08,"TX4":0x0c,"CSR":0x10,"CR":0x14,"SS":0x18}
+     register_map =  {"RX0":0x00,"RX1":0x04,"RX2":0x08,"RX3":0x0c,"TX0":0x00,"TX1":0x04,"TX2":0x08,"TX3":0x0c,"CSR":0x10,"CR":0x14,"SS":0x18}
      register_add = register_map[addr]
      return register_add
 
