@@ -38,12 +38,12 @@ interface cpu_if #(parameter PC_WIDTH = 32,REG_WIDTH=32) (input bit clk);
         endclocking:rd_mon_cb
         
 
-        modport MEM_WR_DRIV(output  memWe,resetn,memAdr,memwrData);
+        modport MEM_WR_DRIV(clocking wr_drv_cb);
 
-        modport MEM_RD_DRIV(output memRd,memAdr,resetn,input memrdData);
+        modport MEM_RD_DRIV(clocking rd_drv_cb);
 
-        modport MEM_WR_MON(input memWe,memAdr,memwrData);
+        modport MEM_WR_MON(clocking wr_mon_cb);
 
-        modport MEM_RD_MON(input memRd,memAdr,memrdData);
+        modport MEM_RD_MON(clocking rd_mon_cb);
 
 endinterface    
