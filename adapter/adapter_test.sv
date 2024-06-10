@@ -1,4 +1,4 @@
-
+import adapter_pkg::*;
 class adapter_test;
 
         //Virtual Interfaces for CPU and WB
