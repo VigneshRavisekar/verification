@@ -5,16 +5,17 @@
 
 module top();
 
+        paramter cycle = 10;
         reg clock;
   		initial begin
           	clock = 1'b0;
+  		    forever #(cycle/2) clock = ~clock;
         end
-  		always #5 clock = ~clock;
         //Instantiate the Interface
         cpu_if CPU_IF(clock);
         wb_if  WB_IF(clock);
         //Handle for Test
-        test test_h;
+        adapter_test test_h;
         //Instantiate the DUT
         cpu_to_wb ADAPTER(.clk(clock),
                           .resetn(CPU_IF.resetn),
